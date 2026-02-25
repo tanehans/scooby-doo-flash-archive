@@ -77,6 +77,32 @@
             text-align: center;
             display: none;
         }
+
+        .nav-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 16px;
+            margin-bottom: 30px;
+        }
+
+        .nav-btn {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 9px 18px;
+            background-color: #2c2c2c;
+            border: 1px solid #555;
+            border-radius: 4px;
+            transition: background-color 0.2s, border-color 0.2s;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .nav-btn:hover {
+            background-color: #3a3a3a;
+            border-color: #3498db;
+            text-decoration: none;
+        }
     </style>
 </head>
 
@@ -94,7 +120,37 @@
         Error loading game. Please ensure the file exists.
     </div>
 
+    <div id="nav-buttons" class="nav-buttons"></div>
+
     <script>
+        // All known episode sequences per game
+        const GAMES = [
+            {
+                episodes: [
+                    { file: 'games/high-seas/prologue.swf', title: 'Horror of the High Seas - Prologue' },
+                    { file: 'games/high-seas/episode-1.swf', title: 'Horror of the High Seas - Episode 1' },
+                    { file: 'games/high-seas/episode-2.swf', title: 'Horror of the High Seas - Episode 2' },
+                    { file: 'games/high-seas/episode-3.swf', title: 'Horror of the High Seas - Episode 3' },
+                    { file: 'games/high-seas/episode-4.swf', title: 'Horror of the High Seas - Episode 4' },
+                ]
+            },
+            {
+                episodes: [
+                    { file: 'games/mayan-mayhem/episode-1.swf', title: 'Mayan Mayhem - Episode 1' },
+                    { file: 'games/mayan-mayhem/episode-2.swf', title: 'Mayan Mayhem - Episode 2' },
+                    { file: 'games/mayan-mayhem/episode-3.swf', title: 'Mayan Mayhem - Episode 3' },
+                    { file: 'games/mayan-mayhem/episode-4.swf', title: 'Mayan Mayhem - Episode 4' },
+                ]
+            },
+            {
+                episodes: [
+                    { file: 'games/haunts-for-the-holidays/episode-1.swf', title: 'Haunts for the Holidays - Episode 1' },
+                    { file: 'games/haunts-for-the-holidays/episode-2.swf', title: 'Haunts for the Holidays - Episode 2' },
+                    { file: 'games/haunts-for-the-holidays/episode-3.swf', title: 'Haunts for the Holidays - Episode 3' },
+                ]
+            },
+        ];
+
         window.addEventListener('load', (event) => {
             const urlParams = new URLSearchParams(window.location.search);
             const swfFile = urlParams.get('file');
@@ -121,6 +177,32 @@
                     document.getElementById('error-message').style.display = 'block';
                     document.getElementById('error-message').textContent = 'Error loading game: ' + error.message;
                 });
+
+                // Build prev/next navigation
+                for (const game of GAMES) {
+                    const idx = game.episodes.findIndex(ep => ep.file === swfFile);
+                    if (idx === -1) continue;
+
+                    const navEl = document.getElementById('nav-buttons');
+                    const prev = game.episodes[idx - 1];
+                    const next = game.episodes[idx + 1];
+
+                    if (prev) {
+                        const a = document.createElement('a');
+                        a.className = 'nav-btn';
+                        a.href = `play.html?file=${encodeURIComponent(prev.file)}&title=${encodeURIComponent(prev.title)}`;
+                        a.textContent = '\u2190 ' + prev.title.split(' - ').pop();
+                        navEl.appendChild(a);
+                    }
+                    if (next) {
+                        const a = document.createElement('a');
+                        a.className = 'nav-btn';
+                        a.href = `play.html?file=${encodeURIComponent(next.file)}&title=${encodeURIComponent(next.title)}`;
+                        a.textContent = next.title.split(' - ').pop() + ' \u2192';
+                        navEl.appendChild(a);
+                    }
+                    break;
+                }
             } else {
                 document.getElementById('game-title').textContent = "No game specified";
                 document.getElementById('error-message').style.display = 'block';

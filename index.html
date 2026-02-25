@@ -30,6 +30,21 @@
             padding: 20px;
             margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .game-thumbnail {
+            width: 150px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+        }
+
+        .game-content {
+            flex-grow: 1;
         }
 
         .game-title {
@@ -37,13 +52,12 @@
             color: #2c3e50;
         }
 
-        ul {
-            list-style-type: none;
+        .episode-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
             padding: 0;
-        }
-
-        li {
-            margin-bottom: 10px;
+            margin: 0;
         }
 
         a {
@@ -66,51 +80,60 @@
 
 <body>
     <h1>Scooby-Doo Flash Games Archive</h1>
+    <div style="text-align: center; margin-top: -10px; margin-bottom: 30px;">
+        <a href="https://github.com/tanehans/scooby-doo-flash-archive" target="_blank">View on GitHub</a>
+    </div>
+
 
     <div class="game-section">
-        <h2 class="game-title">Horror of the High Seas (2004)</h2>
-        <ul>
-            <li><a
+        <img src="games/high-seas/high-seas.webp" alt="Horror of the High Seas" class="game-thumbnail">
+        <div class="game-content">
+            <h2 class="game-title">Horror of the High Seas (2004)</h2>
+            <div class="episode-list">
+                <a
                     href="play.html?file=games/high-seas/prologue.swf&title=Horror of the High Seas - Prologue">Prologue</a>
-            </li>
-            <li><a href="play.html?file=games/high-seas/episode-1.swf&title=Horror of the High Seas - Episode 1">Episode
-                    1</a></li>
-            <li><a href="play.html?file=games/high-seas/episode-2.swf&title=Horror of the High Seas - Episode 2">Episode
-                    2</a></li>
-            <li><a href="play.html?file=games/high-seas/episode-3.swf&title=Horror of the High Seas - Episode 3">Episode
-                    3</a></li>
-            <li><a href="play.html?file=games/high-seas/episode-4.swf&title=Horror of the High Seas - Episode 4">Episode
-                    4</a></li>
-        </ul>
+                <a href="play.html?file=games/high-seas/episode-1.swf&title=Horror of the High Seas - Episode 1">Episode
+                    1</a>
+                <a href="play.html?file=games/high-seas/episode-2.swf&title=Horror of the High Seas - Episode 2">Episode
+                    2</a>
+                <a href="play.html?file=games/high-seas/episode-3.swf&title=Horror of the High Seas - Episode 3">Episode
+                    3</a>
+                <a href="play.html?file=games/high-seas/episode-4.swf&title=Horror of the High Seas - Episode 4">Episode
+                    4</a>
+            </div>
+        </div>
     </div>
 
     <div class="game-section">
-        <h2 class="game-title">Mayan Mayhem (2005)</h2>
-        <ul>
-            <li><a href="play.html?file=games/mayan-mayhem/episode-1.swf&title=Mayan Mayhem - Episode 1">Episode 1</a>
-            </li>
-            <li><a href="play.html?file=games/mayan-mayhem/episode-2.swf&title=Mayan Mayhem - Episode 2">Episode 2</a>
-            </li>
-            <li><a href="play.html?file=games/mayan-mayhem/episode-3.swf&title=Mayan Mayhem - Episode 3">Episode 3</a>
-            </li>
-            <li><a href="play.html?file=games/mayan-mayhem/episode-4.swf&title=Mayan Mayhem - Episode 4">Episode 4</a>
-            </li>
-        </ul>
+        <img src="games/mayan-mayhem/mayan-mayhem.webp" alt="Mayan Mayhem" class="game-thumbnail">
+        <div class="game-content">
+            <h2 class="game-title">Mayan Mayhem (2005)</h2>
+            <div class="episode-list">
+                <a href="play.html?file=games/mayan-mayhem/episode-1.swf&title=Mayan Mayhem - Episode 1">Episode 1</a>
+                <a href="play.html?file=games/mayan-mayhem/episode-2.swf&title=Mayan Mayhem - Episode 2">Episode 2</a>
+                <a href="play.html?file=games/mayan-mayhem/episode-3.swf&title=Mayan Mayhem - Episode 3">Episode 3</a>
+                <a href="play.html?file=games/mayan-mayhem/episode-4.swf&title=Mayan Mayhem - Episode 4">Episode 4</a>
+            </div>
+        </div>
     </div>
 
     <div class="game-section">
-        <h2 class="game-title">Haunts for the Holidays (2007)</h2>
-        <ul>
-            <li><a
+        <img src="games/haunts-for-the-holidays/haunts-for-the-holidays.webp" alt="Haunts for the Holidays"
+            class="game-thumbnail">
+        <div class="game-content">
+            <h2 class="game-title">Haunts for the Holidays (2007)</h2>
+            <div class="episode-list">
+                <a
                     href="play.html?file=games/haunts-for-the-holidays/episode-1.swf&title=Haunts for the Holidays - Episode 1">Episode
-                    1</a></li>
-            <li><a
+                    1</a>
+                <a
                     href="play.html?file=games/haunts-for-the-holidays/episode-2.swf&title=Haunts for the Holidays - Episode 2">Episode
-                    2</a></li>
-            <li><a
+                    2</a>
+                <a
                     href="play.html?file=games/haunts-for-the-holidays/episode-3.swf&title=Haunts for the Holidays - Episode 3">Episode
-                    3</a></li>
-        </ul>
+                    3</a>
+            </div>
+        </div>
     </div>
 
 </body>

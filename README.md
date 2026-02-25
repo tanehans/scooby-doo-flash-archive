@@ -2,7 +2,7 @@
 
 Welcome to the **Scooby-Doo Flash Games Archive**, a simple web project aimed at preserving classic, abandoned browser games using the Ruffle emulator.
 
-**Play the games live here:** [https://tanehans.github.io/Scooby-Doo-Flash-Games/](https://tanehans.github.io/Scooby-Doo-Flash-Games/)
+**Play the games live here:** [https://tanehans.github.io/Scooby-Doo-Flash-Games/](https://tanehans.github.io/scooby-doo-flash-archive/)
 
 ## About This Project
 
