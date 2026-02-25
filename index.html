@@ -5,55 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scooby-Doo Flash Games Archive</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            color: #444;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .game-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .game-title {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 8px 12px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            background-color: #d5dbdb;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Scooby-Doo Flash Games Archive</h1>
-            <p>Welcome to the historical archive. This site uses the Ruffle emulator to preserve and make playable these
-                classic, abandoned web games directly in your modern browser.</p>
-            <p><a href="https://github.com/tanehans/Scooby-Doo-Flash-Games" target="_blank"
-                    style="color: var(--link-color); text-decoration: none; font-weight: 500;">View this project on
-                    GitHub &rarr;</a></p>
-        </header>
+    <h1>Scooby-Doo Flash Games Archive</h1>
 
-        <main class="games-grid">
-            <!-- Mayan Mayhem -->
-            <section class="series-card">
-                <h2>Scooby-Doo! Mayan Mayhem</h2>
-                <ul class="episode-list">
-                    <li><a href="play.html?game=mayan-mayhem/episode-1.swf">Episode 1</a></li>
-                    <li><a href="play.html?game=mayan-mayhem/episode-2.swf">Episode 2</a></li>
-                    <li><a href="play.html?game=mayan-mayhem/episode-3.swf">Episode 3</a></li>
-                    <li><a href="play.html?game=mayan-mayhem/episode-4.swf">Episode 4</a></li>
-                </ul>
-            </section>
-
-            <!-- Haunts for the Holidays -->
-            <section class="series-card">
-                <h2>Scooby-Doo! Haunts for the Holidays</h2>
-                <ul class="episode-list">
-                    <li><a href="play.html?game=haunts-for-the-holidays/episode-1.swf">Episode 1</a></li>
-                    <li><a href="play.html?game=haunts-for-the-holidays/episode-2.swf">Episode 2</a></li>
-                    <li><a href="play.html?game=haunts-for-the-holidays/episode-3.swf">Episode 3</a></li>
-                </ul>
-            </section>
-
-            <!-- Horror on the High Seas -->
-            <section class="series-card">
-                <h2>Scooby Doo! Horror on the High Seas</h2>
-                <ul class="episode-list">
-                    <li><a href="play.html?game=high-seas/prologue.swf">Prologue</a></li>
-                    <li><a href="play.html?game=high-seas/episode-1.swf">Episode 1</a></li>
-                    <li><a href="play.html?game=high-seas/episode-2.swf">Episode 2</a></li>
-                    <li><a href="play.html?game=high-seas/episode-3.swf">Episode 3</a></li>
-                    <li><a href="play.html?game=high-seas/episode-4.swf">Episode 4</a></li>
-                </ul>
-            </section>
-        </main>
+    <div class="game-section">
+        <h2 class="game-title">Horror of the High Seas (2004)</h2>
+        <ul>
+            <li><a
+                    href="play.html?file=games/high-seas/prologue.swf&title=Horror of the High Seas - Prologue">Prologue</a>
+            </li>
+            <li><a href="play.html?file=games/high-seas/episode-1.swf&title=Horror of the High Seas - Episode 1">Episode
+                    1</a></li>
+            <li><a href="play.html?file=games/high-seas/episode-2.swf&title=Horror of the High Seas - Episode 2">Episode
+                    2</a></li>
+            <li><a href="play.html?file=games/high-seas/episode-3.swf&title=Horror of the High Seas - Episode 3">Episode
+                    3</a></li>
+            <li><a href="play.html?file=games/high-seas/episode-4.swf&title=Horror of the High Seas - Episode 4">Episode
+                    4</a></li>
+        </ul>
     </div>
+
+    <div class="game-section">
+        <h2 class="game-title">Mayan Mayhem (2005)</h2>
+        <ul>
+            <li><a href="play.html?file=games/mayan-mayhem/episode-1.swf&title=Mayan Mayhem - Episode 1">Episode 1</a>
+            </li>
+            <li><a href="play.html?file=games/mayan-mayhem/episode-2.swf&title=Mayan Mayhem - Episode 2">Episode 2</a>
+            </li>
+            <li><a href="play.html?file=games/mayan-mayhem/episode-3.swf&title=Mayan Mayhem - Episode 3">Episode 3</a>
+            </li>
+            <li><a href="play.html?file=games/mayan-mayhem/episode-4.swf&title=Mayan Mayhem - Episode 4">Episode 4</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="game-section">
+        <h2 class="game-title">Haunts for the Holidays (2007)</h2>
+        <ul>
+            <li><a
+                    href="play.html?file=games/haunts-for-the-holidays/episode-1.swf&title=Haunts for the Holidays - Episode 1">Episode
+                    1</a></li>
+            <li><a
+                    href="play.html?file=games/haunts-for-the-holidays/episode-2.swf&title=Haunts for the Holidays - Episode 2">Episode
+                    2</a></li>
+            <li><a
+                    href="play.html?file=games/haunts-for-the-holidays/episode-3.swf&title=Haunts for the Holidays - Episode 3">Episode
+                    3</a></li>
+        </ul>
+    </div>
+
 </body>
 
 </html>
