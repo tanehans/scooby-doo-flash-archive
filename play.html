@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play - Scooby-Doo Archive</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Load Ruffle from the official CDN -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <a href="index.html" class="back-link">
+                &larr; Back to Archive
+            </a>
+        </nav>
+
+        <main>
+            <div id="error-container"></div>
+
+            <div class="player-container" id="player-container">
+                <!-- Ruffle will mount here -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameFile = urlParams.get('game');
+            const errorContainer = document.getElementById('error-container');
+            const playerContainer = document.getElementById('player-container');
+
+            if (!gameFile) {
+                showError("No game specified in the URL.");
+                return;
+            }
+
+            // Construct the path to the SWF file
+            const swfPath = `games/${gameFile}`;
+
+            // Initialize Ruffle
+            window.RufflePlayer = window.RufflePlayer || {};
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+
+            player.id = "ruffle-player";
+            playerContainer.appendChild(player);
+
+            // Load the SWF
+            player.load({
+                url: swfPath,
+                allowScriptAccess: true,
+                autoplay: 'on'
+            }).catch(e => {
+                console.error("Error loading SWF:", e);
+                showError(`Failed to load game file: ${swfPath}. Please make sure the file exists.`);
+            });
+        });
+
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            document.getElementById('error-container').appendChild(errorDiv);
+            document.getElementById('player-container').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
